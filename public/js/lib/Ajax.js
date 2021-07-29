@@ -5,6 +5,11 @@ class Ajax {
 	get(url, data=null, callback){
 		this.send_request("GET", url, data, callback)
 	}
+	debug(url, data=null, type="POST"){
+		this.send_request(type, url, data, (php)=>{
+			console.log(php);
+		})
+	}
 	parse(url, data, tag, 
 		success = (json, tag)=>{this.success(json, tag)}, 
 		error   = (json, tag)=>{this.error(json, tag)}){

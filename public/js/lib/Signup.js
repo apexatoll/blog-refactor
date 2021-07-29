@@ -4,5 +4,6 @@ class Signup extends Popup {
 	}
 	submit(){
 		this.parse("/users/register", Form.collect("#form-signup"));
+		//this.debug("/users/register", Form.collect("#form-signup"));
 	}
 }

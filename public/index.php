@@ -4,6 +4,8 @@ require_once(__DIR__."/../app/config/config.php");
 
 use core\Router;
 
+\config\Env::initialize();
+
 session_start();
 
 $r = new Router();

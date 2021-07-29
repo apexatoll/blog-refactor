@@ -8,10 +8,10 @@ class Credentials {
 			$this->instantiate_live();
 	}
 	private function instantiate_dev(){
-		$this->host = "127.0.0.1";
-		$this->user = "root";
-		$this->pass = "";
-		$this->name = "code";
+		$this->host = $_ENV['DB_HOST'];
+		$this->user = $_ENV['DB_USER'];
+		$this->pass = $_ENV['DB_PASS'];
+		$this->name = $_ENV['DB_NAME'];
 	}
 	private function instantiate_live(){
 		$this->host = "127.0.0.1";

@@ -4,6 +4,7 @@ class Database extends Credentials{
 	public function __construct(){
 		parent::__construct();
 		$this->pdo = $this->make_pdo();
+		$this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 	}
 	private function dsn(){
 		return "mysql:host=".$this->host().";dbname=".$this->name();
