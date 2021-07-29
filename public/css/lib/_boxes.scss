@@ -1,0 +1,53 @@
+.box {
+	background:$black;
+	@include radius;
+	@include shadow;
+	h2 {
+		background:$dblack;
+		padding:10px 2.5% 5px;
+	}
+	.content {
+		padding:5px 2.5% 10px;
+		p:first-child{
+			margin-top:5px;
+		}
+		form {
+			@include flex;
+			flex-direction:column;
+			input {
+				@include width(100%);
+				margin:2px 0;
+			}
+		}
+	}
+}
+
+.popup {
+	@include width(80%);
+	h2 {
+		color:$lblue;
+	}
+	.buttons {
+		//@include width(90%, 5px);
+		margin:5px auto;
+		@include flex(space-between);
+		@include radius(null, 5px);
+		background:$dblack;
+		button {
+			padding:0.2em 0;
+			width:100%;
+			&:first-child {
+				@include radius("left", 5px);
+			}
+			&:last-child {
+				@include radius("right", 5px);
+			}
+		}
+		.popup-submit {
+			@include color_hover($dgreen, $black, $dblack, $dgreen);
+		}
+		.popup-cancel {
+			@include color_hover($dred, $black, $dblack, $dred);
+		}
+	}
+}
